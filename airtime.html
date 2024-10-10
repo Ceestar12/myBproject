@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Telco</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .telco-card {
+            border: 2px solid gold;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .telco-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .telco-logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .header-logo {
+            width: 100px;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="container">
+
+    <header class="page-header mt-4">
+        <a href="#" class="btn btn-outline-dark">Back</a>
+        <p>VULTE</p>
+    </header>
+
+    <h3>Select Telco</h3>
+
+    <div class="row mt-4">
+        <div class="col-6 col-md-3 mb-4">
+            <div class="telco-card">
+                <img src="/assets/image/9 Mobile.svg" alt="9Mobile" class="telco-logo">
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <div class="telco-card">
+                <img src="/assets/image/Airtel.jpg" alt="Airtel" class="telco-logo">
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <div class="telco-card">
+                <img src="/assets/image/glo-limited-seeklogo.svg" alt="Glo" class="telco-logo">
+            </div>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <div class="telco-card">
+                <img src="/assets/image/MTN_Group-Logo.wine.svg" alt="MTN" class="telco-logo">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

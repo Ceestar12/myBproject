@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank App Interface</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: #f8f9fa;
+            z-index: 1050;
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%); /* Initially hidden */
+            overflow-y: auto; /* Enable scrolling within the sidebar */
+        }
+
+        /* Sidebar open */
+        .sidebar.open {
+            transform: translateX(0); /* Sidebar slides in */
+        }
+
+        /* Overlay */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            z-index: 1040; /* Ensure it is under the sidebar */
+            display: none;
+        }
+
+        /* Show the overlay when the sidebar is open */
+        #overlay.show {
+            display: block;
+        }
+
+        /* Prevent scrolling when sidebar is open */
+        .no-scroll {
+            overflow: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+        /* Button to toggle sidebar */
+        .navbar-toggler {
+            border: none;
+            background-color: transparent;
+        }
+
+        .navbar-toggler i {
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar d-lg-none">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div>
+                <img src="/assets/image/107.jpg" alt="Logo" class="img-fluid" width="40px">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="d-flex align-items-center p-3">
+            <img src="/assets/image/ben23.jpg" alt="Profile" class="profilePic me-2" width="50px" height="50px">
+            <div>
+                <div class="name">VICTOR BENJAMEN</div>
+                <a href="#" class="view-profile">View profile</a>
+            </div>
+            <button class="close-btn ms-auto" onclick="toggleSidebar()">
+                <img src="/assets/image/wr-dialog-close-btn-black.png" alt="Close" width="30px">
+            </button>
+        </div>
+        
+        <!-- Sidebar Navigation Items -->
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Transfer</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Loans</a></li>
+            <!-- Add more items as necessary -->
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Page Content -->
+    <div class="container mt-4">
+        <h1>Welcome to Your Bank Dashboard</h1>
+        <p>This is the main content of the page. When the sidebar is open, this content should not scroll.</p>
+        <p>Scroll down to simulate longer content. Scrollable content goes here...</p>
+        <p>More content...</p>
+        <!-- Add more page content as necessary -->
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var overlay = document.getElementById("overlay");
+
+            // Toggle sidebar and overlay visibility
+            sidebar.classList.toggle("open");
+            overlay.classList.toggle("show");
+
+            // Disable body scrolling when sidebar is open
+            if (sidebar.classList.contains("open")) {
+                document.body.classList.add('no-scroll'); // Disable body scroll
+            } else {
+                document.body.classList.remove('no-scroll'); // Enable body scroll
+            }
+        }
+    </script>
+
+</body>
+</html>

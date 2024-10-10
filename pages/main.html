@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank App Interface</title>
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<body class="no-scroll">
+    <nav class="navbar  d-lg-none ">
+        <div class="container-fluid d-flex justify-content-between align-items-center  cxx">
+            <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+              <i class="fa-solid fa-bars cff"></i>
+            </button>
+
+         <!-- Image on the Right -->
+    <div>
+        <img src="/assets/image/107.jpg" alt="Logo" class="img-fluid img1 " width="40px">
+      </div>
+    </div>
+    </nav>
+    <!-- Overlay -->
+    
+    
+    <div class="sidebar d-lg-none p-2" id="sidebar">
+        <div class="d-flex ">
+            <div class="profile-info d-flex align-items-center me-5">
+                <img src="/assets/image/ben23.jpg" alt="Profile Image" class="me-2 profilePic" width="50px" height="50px">
+                <div>
+                    <div class="name">VICTOR BENJAMEN</div>
+                    <a href="#" class="view-profile">View profile</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">
+                <img src="/assets/image/wr-dialog-close-btn-black.png" alt="" width="30px" class="img-fluid">
+            </a>
+        </div>
+    
+        <ul class="navbar-nav d-lg-none">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Transfer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Loans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pay Foreign Tuition</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">FX Transfer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sell FX</a>
+            </li>
+        </ul>
+        <hr>
+        <ul class="navbar-nav d-lg-none">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Refer A Friend</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Bills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Get New Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Travel Allowance</a>
+            </li>
+            <hr>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Transaction History</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Branch|ATM|Agent Location</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">QR Payment</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Help</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+        </li>
+        <hr>
+        </ul>
+    </div>
+    
+    <div id="overlay" class="overlay" ></div>
+    
+    <div class="container">
+    <!-- Greeting and Profile -->
+    <div class="d-flex justify-content-between align-items-center my-1">
+        <div class="d-flex align-items-center justify-content-between gap">
+         <img src="/assets/image/userimg.jpeg" alt="" class="img1">
+        <div>
+        <h5 class="m-0">Hi, Benjamen</h5>
+        <p class="m-0">Good Morning</p>
+        </div>
+        </div>
+       
+    </div>
+
+    <!-- Account Info Card -->
+    <div class="account-card">
+        <p class="mb-2">Account Number: <span class="account-number">3019441544</span></p>
+       <div class="d-flex align-items-center justify-content-between ">
+        <p>POLARIS SAVE PLUS 1</p>
+        <P>NGN <span id="balance">*****</span></P>
+        <div id="toggleButton" onclick="toggleBalance()"> <img src="/assets/image/icons8-show-48.png" alt="">
+            </div>
+       </div>
+       <hr class="bg-light">
+        <div class="quick-actions">
+            <div>
+                <img src="/assets/image/icons8-overview-50.png" alt="" class="bg-light ">
+                <p>Fund Account</p>
+            </div>
+            <div>
+                <img src="/assets/image/icons8-transfer-50.png" alt="" class="bg-light ">
+                <p>Transfer Money</p>
+            </div>
+            <div>
+                <img src="/assets/image/icons8-activity-history-50.png" alt="" class="bg-light ">
+                <p>History</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Cards -->
+    <div class="cta-card bg-light">
+        <div>
+        <h6>Pay Foreign Tuition in Naira</h6>
+        <p class="textS">Instantly pay tuitions of schools in the USA, UK and Canada in Naira</p>
+    </div>
+    <div>
+        <button class="btn1 ">Proceed</button>
+    </div>
+    </div>
+
+    <div class="cta-card2 bg-light">
+        
+        <h6>Get More Loans</h6>
+        <p class="textS">We have a variety of loan offers for you. Visit our loan market to place a request.</p>
+        <div class="text-center">
+        <a href="#" class="btn btn-link ">See details</a>
+    </div>
+    </div>
+
+    <div class="cta-card bg-light">
+        <p class="textS">Enjoy the amazing benefits of Polaris Select Plus.</p>
+        <button class="btn1">Get Started</button>
+    </div>
+     <div class="grid">
+        <div>
+            <img src="/assets/image/icons8-call-30.png" alt="">
+            <p>Airtime</p>
+        </div>
+        <div>
+            <img src="/assets/image/icons8-sports-betting-48.png" alt="">
+            <p>Bettings</p>
+        </div>
+        <div>
+            <img src="/assets/image/icons8-wifi-32.png" alt="">
+            <p>Data Bundles</p>
+        </div>
+        <div>
+            <img src="/assets/image/icons8-tv-show-50 (1).png" alt="">
+            <p>Cables</p>
+        </div>
+        <div>
+            <img src="/assets/image/icons8-bulb-48.png" alt="">
+            <p>Utilities</p>
+        </div>
+        <div>
+            <img src="/assets/image/icons8-card-50 (1).png" alt="">
+            <p>More</p>
+        </div>
+     </div>
+
+     
+    <div class="cta-card bg-light">
+        <p class="textS">Earn higher interest when you save.</p>
+        <button class="btn1">Start now</button>
+    </div>
+
+    <div class="cta-card3">
+        <img src="/assets/image/icons8-card-50 (1).png" alt="">
+        <p>Get a new debit card delivered to your doorsteps</p>
+    </div>
+    <!-- Bottom Navigation -->
+    <div class=" d-flex justify-content-around endpart">
+        <div class="text-center">
+            <img src="/assets/image/icons8-home-50.png" alt="">
+            <p class="mb-0">Home</p>
+        </div>
+        <div class="text-center">
+           <img src="/assets/image/icons8-transfer-50 (1).png" alt="">
+            <p class="mb-0">Transfer</p>
+        </div>
+        <div class="text-center">
+            <img src="/assets/image/icons8-stack-of-money-50.png" alt="">
+            <p class="mb-0">Bills</p>
+        </div>
+        <div class="text-center">
+            <img src="/assets/image/icons8-naira-50.png" alt="">
+            <p class="mb-0">eNaira</p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Font Awesome for icons -->
+<script>
+     let actualBalance = "5,000";
+     let isBalanceHidden = true;
+
+
+
+
+    function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    var overlay = document.getElementById("overlay");
+    var togglerIcon = document.getElementById("navbar-toggler-icon");
+
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("show");
+
+    if (sidebar.classList.contains("open")) {
+        togglerIcon.textContent = "✖";
+    } else {
+        togglerIcon.textContent = "☰";
+    }
+    
+}
+   // Close the sidebar when the overlay is clicked
+   document.getElementById("overlay").addEventListener("click", function() {
+        var sidebar = document.getElementById("sidebar");
+        var overlay = document.getElementById("overlay");
+        
+        // Ensure that the sidebar and overlay close
+        sidebar.classList.toggle("open");
+        overlay.classList.toggle("show");
+
+        if (sidebar.classList.contains("open")) {
+                document.body.classList.add('no-scroll'); // Disable body scroll
+            } else {
+                document.body.classList.remove('no-scroll'); // Enable body scroll
+            }
+   
+    });
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function toggleBalance() {
+    const balanceElement = document.getElementById("balance");
+    const toggleButton = document.getElementById("toggleButton");
+
+    if (isBalanceHidden) {
+      // Show balance
+      balanceElement.textContent = actualBalance;
+    //   toggleButton.textContent = "Hi";
+    } else {
+      // Hide balance
+      balanceElement.textContent = "*****";
+    //   toggleButton.textContent = "Show";
+    }
+
+    isBalanceHidden = !isBalanceHidden;
+  }
+</script>
+</body>
+</html>
